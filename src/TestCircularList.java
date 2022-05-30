@@ -7,12 +7,12 @@ public class TestCircularList {
         Scanner sc = new Scanner(System.in);
         int menuSelect = 0;
 
-        do{
+        do {
             System.out.println("1) Check if list is empty\n2) Add an element\n3) Print list\n4) Exit");
             System.out.print("Select an option: ");
             try {
                 menuSelect = Integer.parseInt(sc.nextLine());
-            }catch (NumberFormatException nfe){
+            } catch (NumberFormatException nfe) {
                 System.out.println("Invalid selection. Please enter an integer.");
             }
 
@@ -24,20 +24,21 @@ public class TestCircularList {
                     sc.close();
                     run = false;
                 }
+                default -> System.out.println("Invalid selection. Please choose from the list of options.");
             }
             System.out.println();
             menuSelect = 0;
-        }while(run);
+        } while (run);
     }
 
-    private static void testIsEmpty(CircularList cl){
-        if(cl.isEmpty())
+    private static void testIsEmpty(CircularList cl) {
+        if (cl.isEmpty())
             System.out.println("The list is empty.");
         else
             System.out.println("The list is not empty.");
     }
 
-    private static void testAddToList(CircularList cl, Scanner sc){
+    private static void testAddToList(CircularList cl, Scanner sc) {
         String name;
         int age;
         do {
@@ -51,6 +52,6 @@ public class TestCircularList {
             } catch (NumberFormatException nfe) {
                 System.out.println("Invalid input. Please try again.");
             }
-        }while(true);
+        } while (true);
     }
 }

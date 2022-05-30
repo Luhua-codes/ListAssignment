@@ -41,6 +41,7 @@ public class TestDoubleLinkedList {
                     sc.close();
                     run = false;
                 }
+                default -> System.out.println("Invalid selection. Please choose from the list of options.");
             }
             menuSelect = 0;
             System.out.println();
