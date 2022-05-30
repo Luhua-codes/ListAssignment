@@ -1,3 +1,5 @@
+import org.w3c.dom.ls.LSOutput;
+
 public class DoubleLinkedList {
     private DoubleLinkedListLink head, tail;
 
@@ -67,7 +69,10 @@ public class DoubleLinkedList {
     }
 
     public void peek() {
-        System.out.println(head);
+        if(head == null)
+            System.out.println("The list is empty.");
+        else
+            System.out.println(head);
     }
 
     public void removeFront() {
