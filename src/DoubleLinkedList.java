@@ -72,15 +72,21 @@ public class DoubleLinkedList {
     }
 
     public void removeFront() {
-        head = head.getNext();
-        head.setPrev(null);
-        System.out.printf("The head has been removed. The new head is %s.%n", head);
+        if(head != tail) {
+            head = head.getNext();
+            head.setPrev(null);
+        }else
+            head = null;
+        System.out.printf("The head has been removed. The new head is %s.%n", head == null ? "null" : head);
     }
 
     public void removeLast() {
-        tail = tail.getPrev();
-        tail.setNext(null);
-        System.out.printf("The tail has been removed. The new tail is %s.%n", tail);
+        if(tail != head) {
+            tail = tail.getPrev();
+            tail.setNext(null);
+        }else
+            tail = null;
+        System.out.printf("The tail has been removed. The new tail is %s.%n", tail == null ? "null" : tail);
     }
 
     public void deleteLink(String name) { //delete by name
