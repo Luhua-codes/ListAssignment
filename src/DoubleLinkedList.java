@@ -32,12 +32,11 @@ public class DoubleLinkedList {
         DoubleLinkedListLink newLink = new DoubleLinkedListLink(name, age);
         if (isEmpty()) {
             head = newLink;
-            tail = newLink;
         } else {
             newLink.setPrev(tail);
             tail.setNext(newLink);
-            tail = newLink;
         }
+        tail = newLink;
         System.out.printf("%s has been added to the back of the list%n", newLink);
     }
 
